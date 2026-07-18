@@ -13,7 +13,7 @@ function required(name) {
 module.exports = {
   // Clé secrète Gemini (Google AI Studio) — jamais exposée au frontend
   geminiApiKey: () => required('GEMINI_API_KEY'),
-  geminiModel: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
+  geminiModel: process.env.GEMINI_MODEL || 'gemini-3.5-flash',
   geminiApiBaseUrl: 'https://generativelanguage.googleapis.com/v1beta/models',
 
   allowedOrigin: process.env.ALLOWED_ORIGIN || 'https://mekkatech.ma',
