@@ -1,0 +1,43 @@
+{
+  "entreprise": {
+    "nom": "Mekka Tech",
+    "pays": "Maroc",
+    "siege": "Région de Casablanca",
+    "zone_intervention": "Tout le Maroc",
+    "horaires": "Lundi–Samedi, 9h–19h",
+    "jours_fermeture": ["Dimanche"]
+  },
+  "contact": {
+    "telephone": "+212 6 67 74 71 80",
+    "whatsapp": "+212 6 67 74 71 80",
+    "whatsapp_lien": "https://wa.me/212667747180",
+    "email": "mekka.technologie@gmail.com"
+  },
+  "services": [
+    { "code": "informatique", "nom": "Informatique", "description": "Vente, installation et maintenance de matériel informatique, réseaux et postes de travail." },
+    { "code": "domotique", "nom": "Domotique", "description": "Maisons et bureaux intelligents : éclairage, volets, chauffage et accès pilotés depuis un smartphone." },
+    { "code": "videosurveillance", "nom": "Vidéosurveillance", "description": "Caméras IP et analogiques, enregistreurs NVR/DVR, vision nocturne, consultation à distance 24/7." },
+    { "code": "detection_incendie", "nom": "Détection incendie", "description": "Détecteurs de fumée et de chaleur, centrales d'alarme incendie conformes aux normes de sécurité." },
+    { "code": "anti_intrusion", "nom": "Anti-intrusion", "description": "Systèmes d'alarme anti-intrusion, capteurs de mouvement, sirènes, télésurveillance." },
+    { "code": "automatisme", "nom": "Automatisme", "description": "Automatisation de portails, portes de garage et barrières avec commande à distance." },
+    { "code": "telephonie", "nom": "Téléphonie", "description": "Installation de standards téléphoniques (IP/PABX) et lignes fixes pour entreprises." },
+    { "code": "teledistribution", "nom": "Télédistribution", "description": "Distribution TV multi-postes, réception satellite, réseaux de diffusion." },
+    { "code": "electricite", "nom": "Électricité", "description": "Installations électriques basse tension, tableaux, mise aux normes, dépannage." },
+    { "code": "cablage", "nom": "Câblage", "description": "Câblage structuré cuivre et fibre optique pour réseaux data, téléphonie, vidéosurveillance." }
+  ],
+  "pages_site": [
+    { "nom": "Accueil", "url": "/index.html" },
+    { "nom": "Services", "url": "/services.html" },
+    { "nom": "Boutique", "url": "/boutique.html", "note": "En cours de développement" },
+    { "nom": "Partenaires", "url": "/partenaires.html" },
+    { "nom": "À propos", "url": "/apropos.html" },
+    { "nom": "Devis", "url": "/devis.html", "note": "Formulaire de demande de devis gratuit" },
+    { "nom": "Contact", "url": "/contact.html" }
+  ],
+  "partenaires": [
+    "Bayti Sakane", "Interior'S", "Anfa Realties", "Bagagio", "Kids Village", "Sypex", "Urbat Maroc"
+  ],
+  "non_couvert": {
+    "note": "Toute information non listée ci-dessus (prix, délais, marques précises de matériel, disponibilité d'un technicien à une date donnée) n'est PAS connue de l'assistant et ne doit jamais être inventée."
+  }
+}

@@ -1,0 +1,25 @@
+# ============================================================
+# MEKKA TECH — Configuration Netlify
+# Sert le frontend statique ET héberge la fonction chatbot (backend/functions)
+# ============================================================
+
+[build]
+  publish = "frontend/public"
+  functions = "backend/functions"
+  base = ""
+
+[functions]
+  node_bundler = "esbuild"
+
+# Le frontend appelle /api/chat ; Netlify redirige vers la fonction réelle
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

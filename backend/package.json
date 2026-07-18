@@ -1,0 +1,10 @@
+{
+  "name": "mekka-tech-chatbot-backend",
+  "version": "1.0.0",
+  "description": "Fonction serverless : relais sécurisé entre le chatbot du site et l'API Gemini (Google AI)",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}
