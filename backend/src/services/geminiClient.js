@@ -7,28 +7,17 @@
 // ============================================================
 
 const env = require('../config/env');
-const fs = require('fs');
-const path = require('path');
-
-const systemPrompt = fs.readFileSync(path.join(__dirname, '../knowledge/system-prompt.md'), 'utf-8');
-const knowledge = JSON.parse(fs.readFileSync(path.join(__dirname, '../knowledge/knowledge.json'), 'utf-8'));
+const systemPrompt = require('../knowledge/system-prompt');
+const knowledge = require('../knowledge/knowledge.json');
 
 function buildSystemInstruction() {
   return `${systemPrompt}\n\n## knowledge.json (données factuelles actuelles)\n\`\`\`json\n${JSON.stringify(knowledge, null, 2)}\n\`\`\``;
 }
 
-/**
- * Gemini utilise le rôle "model" là où d'autres API utilisent "assistant".
- */
 function toGeminiRole(role) {
   return role === 'assistant' ? 'model' : 'user';
 }
 
-/**
- * @param {string} message - message actuel de l'utilisateur (déjà nettoyé)
- * @param {Array<{role:string, content:string}>} historique - échanges précédents (déjà nettoyés/tronqués)
- * @param {string} langue - fr / ar / en (indicatif, le system prompt gère déjà la consigne de langue)
- */
 async function askGemini(message, historique = [], langue = 'fr') {
   const contents = [
     ...historique.map((m) => ({ role: toGeminiRole(m.role), parts: [{ text: m.content }] })),
@@ -47,7 +36,7 @@ async function askGemini(message, historique = [], langue = 'fr') {
       system_instruction: { parts: [{ text: buildSystemInstruction() }] },
       contents,
       generationConfig: {
-        temperature: 0.3,   // peu de créativité : on veut de la précision, pas de l'invention
+        temperature: 0.3,
         maxOutputTokens: 400
       }
     })
