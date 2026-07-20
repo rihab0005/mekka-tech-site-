@@ -4,7 +4,7 @@
 
 const { validateChatRequest } = require('../middleware/sanitizeInput');
 const { isRateLimited } = require('../middleware/rateLimiter');
-const { askGemini } = require('../services/geminiClient');
+const { askGroq } = require('../services/groqClient');
 
 const MESSAGES_ERREUR = {
   fr: {
@@ -42,7 +42,7 @@ async function handleChat(body, visitorId) {
   }
 
   try {
-    const reply = await askGemini(data.message, data.historique, langue);
+    const reply = await askGroq(data.message, data.historique, langue);
     return { statusCode: 200, body: { success: true, reply } };
   } catch (err) {
     console.error('[chat.controller] Erreur Gemini :', err.message);
